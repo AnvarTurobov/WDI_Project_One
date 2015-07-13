@@ -1,0 +1,77 @@
+** {
+  margin: 0;
+  padding: 0px;
+}*/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+header {
+  background-color: red;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+}
+
+ul {
+  margin: 0 auto;
+}
+
+li {
+  margin: 0px 20px;
+  line-height: 60px;
+  display: inline;
+}
+
+#operator {
+  background-color: black;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #f2f2f2;
+}
+
+h1 {
+  margin: 0 auto;
+}
+
+
+section {
+  width: 100%;
+  height: 500px;
+}
+
+.main {
+
+}
+
+
+/*div.container {
+  margin: 0 auto;
+  width: 80%;
+  height: 450px;
+}
+
+div.left {
+  float: left;
+  width: 50%;
+  height: 450px;
+}
+
+div.right {
+  background-color: cyan;
+  float: left;
+  width: 50%;
+  height: 450px;
+}*/
+
+footer{
+  background-color: grey;
+  height: 100px;
+}
