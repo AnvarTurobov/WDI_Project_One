@@ -14,67 +14,117 @@
 
  //alert("hi");
 
-var $display;
+ var $display;
 
-var initialize = function(){
-	$display = $('#display');
-	bindEvents();
-}
+ var initialize = function(){
+ 	$display = $('#display');
+ 	bindEvents();
+ }
 
-var randomNumber = function(min,max) {
-	return parseInt(Math.floor(Math.random()*(max-min+1)+min));
-}
 
-var randomOperator = function() {
-	var operators = ["+", "-", "/", "*"];
-	return operators[Math.floor(Math.random() * operators.length)]
-}
+ var randomNumber = function(min,max) {
+ 	return parseInt(Math.floor(Math.random()*(max-min+1)+min));
+ }
 
-var generateEquation = function() {
-	var min = 100,
-			max = 1,
-			firstRandomNumber = randomNumber(min, max),
-			secondRandomNumber = randomNumber(min, max),
-			operator = randomOperator(),
-			answer;
-			
-			switch (operator) {
-				case "+": 
-					answer = firstRandomNumber + secondRandomNumber;
-					break;
-				case "-": 
-					answer = firstRandomNumber - secondRandomNumber;
-					break;
-				case "/": 
-					answer = firstRandomNumber / secondRandomNumber;
-					break;
-				case "*": 
-					answer = firstRandomNumber * secondRandomNumber;
-					break;
-			}
-	
-	return answer = {
-		firstRandomNumber: firstRandomNumber,
-		operator: operator,
-		secondRandomNumber: secondRandomNumber,
-		answer: answer
-	}
-}
+ var randomOperator = function() {
+ 	var operators = ["+", "-", "/", "*"];
+ 	return operators[Math.floor(Math.random() * operators.length)]
+ }
 
-var easyGame = function(){
-	event.preventDefault();
-	var answer = generateEquation();
-	if (answer.answer !== Math.round(answer.answer)) {
-		answer = generateEquation();
-	}
+ var generateEquation = function() {
+ 	var min = 1,
+ 	max = 100,
+ 	firstRandomNumber = randomNumber(min, max),
+ 	secondRandomNumber = randomNumber(min, max),
+ 	operator = randomOperator(),
+ 	answer;
 
-	$display.text(answer.firstRandomNumber + " " + "?" + " "+ answer.secondRandomNumber + " = " + answer.answer)
-}
+ 	switch (operator) {
+ 		case "+": 
+ 		answer = firstRandomNumber + secondRandomNumber;
+ 		break;
+ 		case "-": 
+ 		answer = firstRandomNumber - secondRandomNumber;
+ 		break;
+ 		case "/": 
+ 		answer = firstRandomNumber / secondRandomNumber;
+ 		break;
+ 		case "*": 
+ 		answer = firstRandomNumber * secondRandomNumber;
+ 		break;
+ 	}
 
-var bindEvents = function(){
-	$('#easy').on('click', easyGame);
-}
+ 	return answer = {
+ 		firstRandomNumber: firstRandomNumber,
+ 		operator: operator,
+ 		secondRandomNumber: secondRandomNumber,
+ 		answer: answer
+ 	}
+ }
 
-$(function() {
-	initialize();
-});
+ function shuffle(array) {
+ 	var currentIndex = array.length, temporaryValue, randomIndex ;
+
+   // While there remain elements to shuffle...
+   while (0 !== currentIndex) {
+
+     // Pick a remaining element...
+     randomIndex = Math.floor(Math.random() * currentIndex);
+     currentIndex -= 1;
+
+     // And swap it with the current element.
+     temporaryValue = array[currentIndex];
+     array[currentIndex] = array[randomIndex];
+     array[randomIndex] = temporaryValue;
+   }
+
+   return array;
+ }
+
+
+
+ var easyGame = function(){
+ 	var operators = ["+", "-", "/", "*"];
+
+ 	for(var i = 1; i<5; i++){
+ 		$('#operator'+i).html(newShuffle = shuffle(operators).splice(0, 1))
+ 		$('#operator'+i).attr("data-id", newShuffle.splice(0, 1))
+ 	}
+
+
+ 	event.preventDefault();
+ 	var answer = generateEquation();
+ 	if (answer.answer !== Math.round(answer.answer)) {
+ 		answer = generateEquation();
+ 	}
+
+ 	$display.text(answer.firstRandomNumber + " " + "?" + " "+ answer.secondRandomNumber + " = " + answer.answer)
+
+ 	$(".operator").on("click", function(){
+ 		if(this.getAttribute("data-id") === answer.operator){
+ 			alert("correct")
+ 		}else{
+ 			alert("wrong answer")
+ 		}
+ 	})
+
+ 	setTimeout(function(){
+ 		$('.operator').html('?')
+ 	}, 2000); //buttons fadeOut
+
+ }
+
+ var bindEvents = function(){
+ 	$('#easy').on('click', easyGame);
+ 	$('#progress').on('click', easyGame);
+ }
+
+
+
+ $(function() {
+ 	initialize();
+ });
+
+
+
+
