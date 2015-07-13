@@ -15,6 +15,7 @@
  //alert("hi");
 
  var $display;
+ var roundsPlayed= [];
 
  var initialize = function(){
  	$display = $('#display');
@@ -102,23 +103,33 @@
 
  	$(".operator").on("click", function(){
  		if(this.getAttribute("data-id") === answer.operator){
- 		$('#progress').append('Correct! Верно! Кichtig! 正確! Correctto!');	//alert("correct")  
+ 			$('#progress').html('Correct! Верно! Кichtig! 正確! Correctto! <br> <button id="continue">CONTINUE ===></button>');
+ 			$("#continue").on("click", function(){
+ 				$('#progress').html("");
+ 				roundsPlayed++;
+ 				//for (i=0; i-5)
+ 			})//alert("correct")  
  		}else{
- 		$('#progress').append('WRONG <br> Come on man, you can do better than that! Неправильно! Falsch! 錯! Sbagliato!') //alert("wrong answer")
- 		}
- 	})
+ 		$('#progress').html('WRONG <br> Come on man, you can do better than that! Неправильно! Falsch! 錯! Sbagliato! <br> <button id="startAgain">START AGAIN ===></button>'); //alert("wrong answer")
+
+ 		$("#startAgain").on("click", function(){
+ 			$('#progress').html("");
+ 		})
+ 	}
+ 	
+
+ })
 
  	setTimeout(function(){
  		$('.operator').html('?')
- 	}, 5000); //buttons fadeOut
+ 	}, 3000); //buttons fadeOut
 
  }
 
  var bindEvents = function(){
  	$('#easy').on('click', easyGame);
- 	//$('#progress').on('click', easyGame);
+ 	$('#progress').on('click', easyGame);
  }
-
 
 
  $(function() {
