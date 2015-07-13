@@ -13,3 +13,68 @@
 // next level will be similar- the only difference would be, the time to show the content is less
 
  //alert("hi");
+
+var $display;
+
+var initialize = function(){
+	$display = $('#display');
+	bindEvents();
+}
+
+var randomNumber = function(min,max) {
+	return parseInt(Math.floor(Math.random()*(max-min+1)+min));
+}
+
+var randomOperator = function() {
+	var operators = ["+", "-", "/", "*"];
+	return operators[Math.floor(Math.random() * operators.length)]
+}
+
+var generateEquation = function() {
+	var min = 100,
+			max = 1,
+			firstRandomNumber = randomNumber(min, max),
+			secondRandomNumber = randomNumber(min, max),
+			operator = randomOperator(),
+			answer;
+			
+			switch (operator) {
+				case "+": 
+					answer = firstRandomNumber + secondRandomNumber;
+					break;
+				case "-": 
+					answer = firstRandomNumber - secondRandomNumber;
+					break;
+				case "/": 
+					answer = firstRandomNumber / secondRandomNumber;
+					break;
+				case "*": 
+					answer = firstRandomNumber * secondRandomNumber;
+					break;
+			}
+	
+	return answer = {
+		firstRandomNumber: firstRandomNumber,
+		operator: operator,
+		secondRandomNumber: secondRandomNumber,
+		answer: answer
+	}
+}
+
+var easyGame = function(){
+	event.preventDefault();
+	var answer = generateEquation();
+	if (answer.answer !== Math.round(answer.answer)) {
+		answer = generateEquation();
+	}
+
+	$display.text(answer.firstRandomNumber + " " + "?" + " "+ answer.secondRandomNumber + " = " + answer.answer)
+}
+
+var bindEvents = function(){
+	$('#easy').on('click', easyGame);
+}
+
+$(function() {
+	initialize();
+});

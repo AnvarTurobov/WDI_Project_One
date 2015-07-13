@@ -14,7 +14,7 @@ body {
   text-align: center;
   margin: 20px auto;
   background-color: pink;
-  width: 300px;
+  width: 400px;
   height: 70px; 
   border-width: 2px;
   border-style: solid;
@@ -23,16 +23,16 @@ body {
   padding: 10px;
 }
 
-
-
-#equation {
+#display {
   border-width: 2px;
   border-color: red;
-  border-radius: 20%;
+  font-size: 50px;
+  font-family: serif;
+  font-weight: bold;
   text-align: center;
   margin: 20px auto;
   background-color: yellow;
-  width: 300px;
+  width: 400px;
   height: 70px; 
   border-style: solid;
   border-radius: 30%;
@@ -40,14 +40,14 @@ body {
 }
 
 
-.buttons {
+.operators {
 	text-align: center;
 	display: inline-block;
 	margin: 0 auto;
+	width: 300px;
+	height: 70px;
+	border-radius: 100%;
 }
-
-
-
 
 header {
   background-color: red;
@@ -55,7 +55,6 @@ header {
   height: 60px;
   text-align: center;
 }
-
 
 ul {
   margin: 0 auto;
