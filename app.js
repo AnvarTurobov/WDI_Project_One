@@ -102,21 +102,21 @@
 
  	$(".operator").on("click", function(){
  		if(this.getAttribute("data-id") === answer.operator){
- 			alert("correct")
+ 		$('#progress').append('Correct! Верно! Кichtig! 正確! Correctto!');	//alert("correct")  
  		}else{
- 			alert("wrong answer")
+ 		$('#progress').append('WRONG <br> Come on man, you can do better than that! Неправильно! Falsch! 錯! Sbagliato!') //alert("wrong answer")
  		}
  	})
 
  	setTimeout(function(){
  		$('.operator').html('?')
- 	}, 2000); //buttons fadeOut
+ 	}, 5000); //buttons fadeOut
 
  }
 
  var bindEvents = function(){
  	$('#easy').on('click', easyGame);
- 	$('#progress').on('click', easyGame);
+ 	//$('#progress').on('click', easyGame);
  }
 
 
