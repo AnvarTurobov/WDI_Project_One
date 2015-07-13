@@ -12,16 +12,15 @@
 // user makes a choice && computer will compare the results if true- { users goes to the next level
 // next level will be similar- the only difference would be, the time to show the content is less
 
- //alert("hi");
 
  var $display;
  var roundsPlayed= [];
+ var time = 3000;
 
  var initialize = function(){
  	$display = $('#display');
  	bindEvents();
  }
-
 
  var randomNumber = function(min,max) {
  	return parseInt(Math.floor(Math.random()*(max-min+1)+min));
@@ -82,8 +81,6 @@
    return array;
  }
 
-
-
  var easyGame = function(){
  	var operators = ["+", "-", "/", "*"];
 
@@ -107,9 +104,9 @@
  			$("#continue").on("click", function(){
  				$('#progress').html("");
  				roundsPlayed++;
- 				//for (i=0; i-5)
- 			})//alert("correct")  
- 		}else{
+ 				time -= 400;
+ 			})  
+ 		} else {
  		$('#progress').html('WRONG <br> Come on man, you can do better than that! Неправильно! Falsch! 錯! Sbagliato! <br> <button id="startAgain">START AGAIN ===></button>'); //alert("wrong answer")
 
  		$("#startAgain").on("click", function(){
@@ -120,13 +117,13 @@
 
  })
 
- 	setTimeout(function(){
+ 	setTimeout(function() {
  		$('.operator').html('?')
- 	}, 3000); //buttons fadeOut
+ 	}, time);
 
  }
 
- var bindEvents = function(){
+ var bindEvents = function() {
  	$('#easy').on('click', easyGame);
  	$('#progress').on('click', easyGame);
  }
