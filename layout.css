@@ -9,31 +9,29 @@ body {
   margin: 0 auto;
   text-align: center;
   background: url("file:///Users/anvarturobov/Desktop/development/WDI_Project_One/background.jpg") no-repeat center center / cover;
+  cursor: url("file:///Users/anvarturobov/Desktop/development/WDI_Project_One/image.jpeg");
 }
 
-/*.wrapper {
-	background: url("file:///Users/anvarturobov/Desktop/development/WDI_Project_One/background.jpg") no-repeat center center / cover;
-}*/
 
 #easy {
-	font-size: 50px;
+	font-size: 80px;
 	font-color: #0404f9;
 }
-
 
 
 #progress {
   text-align: center;
   margin: 20px auto;
   background-color: transparent;
-  width: 400px;
-  height: 90px; 
+  width: 450px;
+  height: 100px; 
   border-width: 1px;
-  border-style: solid;
   border-color: #6495ED;
   border-radius: 100%;
-  padding: 10px;
+  padding: 20px;
   color: red;
+  line-height: 30px;
+  outline: none
 }
 
 #continue {
@@ -41,20 +39,21 @@ body {
 	font-size: 25px;
 	color: green;
 	border-width: 0;
+	line-height: 30px;
+}
 
 #startAgain {
 	font-weight: bold;
 	font-size: 25px;
-	color: red;
-	border-width: 0
-}
+	color: yellow;
+	margin-top: -50px;
 }
 
 #display {
   border-width: 2px;
   border-color: red;
   font-size: 50px;
-  font-family: serif;
+  font-family: Rockwell Extra Bold;
   font-weight: bold;
   text-align: middle;
   margin: 20px auto;
@@ -69,18 +68,28 @@ body {
 
 
 button {
-	text-align: middle;
-	display: inline-block;
-	margin: 0 auto;
 	width: 250px;
-	height: 80px;
 	border-radius: 100%;
 	font-weight: bold;
 	font-family: serif;
-	font-size: 50px;
 	background-color: transparent;
-	color: #4dff07
+	color: #4dff07;
+	line-height: 150px;
+	padding: 0;
+	border: 0px;
+	outline: none
 }
+
+li button {
+	font-size: 50px;
+	float: left;
+	margin: 0 15px;
+}
+
+li button:hover{
+	font-size: 100px
+}
+
 
 header {
   width: 100%;
@@ -94,15 +103,13 @@ ul {
 
 
 li {
-  margin: 0px 20px;
-  line-height: 60px;
-  display: inline;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
 }
-
 
 a {
   text-decoration: none;
-/*  color: #f2f2f2;*/
 }
 
 h1 {
