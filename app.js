@@ -82,8 +82,12 @@
  }
 
  var easyGame = function(){
- 	var operators = ["+", "-", "/", "*"];
+ 	$('#easy').addClass('animated rubberBand');
+ 	setTimeout(function() {
+ 		$('#easy').removeClass('animated rubberBand');
+ 	}, 1000)
 
+ 	var operators = ["+", "-", "/", "*"];
  	for(var i = 1; i<5; i++){
  		$('#operator'+i).html(newShuffle = shuffle(operators).splice(0, 1))
  		$('#operator'+i).attr("data-id", newShuffle.splice(0, 1))
@@ -100,7 +104,7 @@
 
  	$(".operator").on("click", function(){
  		if(this.getAttribute("data-id") === answer.operator){
- 			$('#progress').html('Correct! Верно! Кichtig! 正確! Correctto! <br> <button id="continue">CONTINUE ===></button>');
+ 			$('#progress').html('Correct! Верно! Кichtig! 正確! Correctto!<br><button id="continue" class="animate shake">CONTINUE</button>');
  			$("#continue").on("click", function(){
  				$('#progress').html("");
  				roundsPlayed++;
@@ -114,7 +118,6 @@
  		})
  	}
  	
-
  })
 
  	setTimeout(function() {

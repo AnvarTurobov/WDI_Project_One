@@ -1,33 +1,53 @@
-** {
+* {
   margin: 0;
   padding: 0px;
-}*/
+}
 
 
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0 auto;
   text-align: center;
-  background: url("http://newartcolorz.com/images/2014/3/awesome-space-wallpaper-7686-8116-hd-wallpapers.jpg");
+  background: url("file:///Users/anvarturobov/Desktop/development/WDI_Project_One/background.jpg") no-repeat center center / cover;
 }
+
+/*.wrapper {
+	background: url("file:///Users/anvarturobov/Desktop/development/WDI_Project_One/background.jpg") no-repeat center center / cover;
+}*/
+
+#easy {
+	font-size: 50px;
+	font-color: #0404f9;
+}
+
+
 
 #progress {
   text-align: center;
   margin: 20px auto;
-  background-color: pink;
+  background-color: transparent;
   width: 400px;
   height: 90px; 
-  border-width: 2px;
+  border-width: 1px;
   border-style: solid;
   border-color: #6495ED;
   border-radius: 100%;
   padding: 10px;
+  color: red;
 }
 
 #continue {
 	font-weight: bold;
 	font-size: 25px;
+	color: green;
+	border-width: 0;
+
+#startAgain {
+	font-weight: bold;
+	font-size: 25px;
 	color: red;
+	border-width: 0
+}
 }
 
 #display {
@@ -36,14 +56,15 @@ body {
   font-size: 50px;
   font-family: serif;
   font-weight: bold;
-  text-align: center;
+  text-align: middle;
   margin: 20px auto;
-  background-color: yellow;
+  background-color: transparent;
   width: 400px;
   height: 90px; 
-  border-style: solid;
-  border-radius: 100%;
+  border-radius: 20%;
   padding: 10px;
+  color: #4dff07;
+
 }
 
 
@@ -56,11 +77,12 @@ button {
 	border-radius: 100%;
 	font-weight: bold;
 	font-family: serif;
-	font-size: 30px;
+	font-size: 50px;
+	background-color: transparent;
+	color: #4dff07
 }
 
 header {
-  background-color: red;
   width: 100%;
   height: 60px;
   text-align: center;
@@ -80,7 +102,7 @@ li {
 
 a {
   text-decoration: none;
-  color: #f2f2f2;
+/*  color: #f2f2f2;*/
 }
 
 h1 {
@@ -91,6 +113,10 @@ h1 {
 section {
   width: 100%;
   height: 500px;
+}
+
+section.wrapper {
+	line-height: 87px;
 }
 
 .main {
