@@ -17,8 +17,8 @@ var randomOperator = function() {
 }
 
 var generateEquation = function() {
-	var min = 1,
-	max = 100,
+	var min = 20,
+	max = 200,
 	firstRandomNumber = randomNumber(min, max),
 	secondRandomNumber = randomNumber(min, max),
 	operator = randomOperator(),
@@ -39,7 +39,7 @@ var generateEquation = function() {
 		break;
 	}
 
-	return answer = {
+	return {
 		firstRandomNumber: firstRandomNumber,
 		operator: operator,
 		secondRandomNumber: secondRandomNumber,
@@ -78,7 +78,6 @@ function startTimer(duration, display) {
 		display.text(seconds);
 		console.log(timer)
 
-
 		if (timer == -1) {
 			display.text("");
 			clearInterval(interval)
@@ -95,7 +94,7 @@ var easyGame = function(){
 
 	setTimeout(function() {
 		$('#easy').removeClass('animated rubberBand');
-	}, 2000)
+	}, 2200)
 
 	var operators = ["+", "-", "/", "*"];
 	for(var i = 1; i<5; i++){
@@ -104,8 +103,7 @@ var easyGame = function(){
 	}
 
  	var answer = generateEquation();
- 	if ((answer.answer !== Math.round(answer.answer)) || (answer.answer.toString().indexOf("-") >= 0)) {
- 		debugger
+ 	while (answer.answer % 1 !== 0 || answer.answer < 50 || answer.answer > 999) {
  		answer = generateEquation();
  	}
 
@@ -118,7 +116,7 @@ var easyGame = function(){
  			$("#continue").on("click", function(){
  				$('#progress').html("");
  				roundsPlayed++;
- 				time -= 200;
+ 				time -= 300;
  			})  
  		} else {
  		$('#progress').html('WRONG! come one, you can do better than that! Неправильно! Falsch! 錯! Sbagliato!<br><button id="startAgain">START AGAIN</button>'); //alert("wrong answer")
