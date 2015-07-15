@@ -116,14 +116,14 @@ var easyGame = function(){
 			$("#continue").on("click", function(){
 				$('#progress').html("");
 				roundsPlayed++;
-				time -= 500;
+				time -= 100;
 			})  
 		} else {
  		$('#progress').html('WRONG! come one, you can do better than that! Неправильно! Falsch! 錯! Sbagliato!<br><button id="startAgain">START AGAIN</button>'); //alert("wrong answer")
 
  		$("#startAgain").on("click", function(){
  			$('#progress').html("");
- 			time = 2000
+ 			time = 2500
  		})
  	}
  	
