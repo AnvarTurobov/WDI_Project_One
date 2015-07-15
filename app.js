@@ -94,7 +94,7 @@ var easyGame = function(){
 
 	setTimeout(function() {
 		$('#easy').removeClass('animated rubberBand');
-	}, 2200)
+	}, 2000)
 
 	var operators = ["+", "-", "/", "*"];
 	for(var i = 1; i<5; i++){
@@ -102,54 +102,55 @@ var easyGame = function(){
 		$('#operator'+i).attr("data-id", newShuffle.splice(0, 1))
 	}
 
- 	var answer = generateEquation();
- 	while (answer.answer % 1 !== 0 || answer.answer < 50 || answer.answer > 999) {
- 		answer = generateEquation();
- 	}
+	var answer = generateEquation();
+	while (answer.answer % 1 !== 0 || answer.answer < 50 || answer.answer > 999) {
+		answer = generateEquation();
+	}
 
 
- 	$display.text(answer.firstRandomNumber + " " + "?" + " "+ answer.secondRandomNumber + " = " + answer.answer)
+	$display.text(answer.firstRandomNumber + " " + "?" + " "+ answer.secondRandomNumber + " = " + answer.answer)
 
- 	$(".operator").on("click", function(){
- 		if(this.getAttribute("data-id") === answer.operator){
- 			$('#progress').html('Correct! Верно! Кichtig! 正確! Correctto!<br><button id="continue">CONTINUE</button>');
- 			$("#continue").on("click", function(){
- 				$('#progress').html("");
- 				roundsPlayed++;
- 				time -= 300;
- 			})  
- 		} else {
+	$(".operator").on("click", function(){
+		if(this.getAttribute("data-id") === answer.operator){
+			$('#progress').html('Correct! Верно! Кichtig! 正確! Correctto!<br><button id="continue">CONTINUE</button>');
+			$("#continue").on("click", function(){
+				$('#progress').html("");
+				roundsPlayed++;
+				time -= 500;
+			})  
+		} else {
  		$('#progress').html('WRONG! come one, you can do better than that! Неправильно! Falsch! 錯! Sbagliato!<br><button id="startAgain">START AGAIN</button>'); //alert("wrong answer")
 
  		$("#startAgain").on("click", function(){
  			$('#progress').html("");
+ 			time = 2000
  		})
  	}
  	
  })
 
 
- 	setTimeout(function() {
- 		$('.operator').html('?')
- 	}, time);
+	setTimeout(function() {
+		$('.operator').html('?')
+	}, time);
 
- }
+}
 
- var bindEvents = function() {
- 	var three_seconds = 3,
- 	display = $("#display");
- 	
- 	$('#easy').on('click', function(){
- 		startTimer(three_seconds, display)
- 	});
+var bindEvents = function() {
+	var three_seconds = 3,
+	display = $("#display");
+	
+	$('#easy').on('click', function(){
+		startTimer(three_seconds, display)
+	});
 
- 	$('#progress').on('click', function(){
- 		$('#display').html("")
- 		startTimer(three_seconds, display)
- 	});
- }
+	$('#progress').on('click', function(){
+		$('#display').html("")
+		startTimer(three_seconds, display)
+	});
+}
 
 
- $(function() {
- 	initialize();
- });
+$(function() {
+	initialize();
+});
