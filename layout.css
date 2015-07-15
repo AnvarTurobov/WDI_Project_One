@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0px;
-  cursor: url("./image2.png"), default;
+  cursor: url("./image.png"), default;
 }
 
 
@@ -74,7 +74,7 @@ body {
 #continue {
 	font-weight: bold;
 	font-size: 25px;
-	color: green;
+	color: #00ff40;
 	border-width: 0;
 	line-height: 30px;
 }
@@ -99,8 +99,8 @@ body {
   font-weight: bold;
   text-align: middle;
   margin: 20px auto;
-  width: 700px;
-  height: 90px; 
+  width: 800px;
+  height: 100px; 
   border-radius: 20%;
   padding: 10px;
   color: white;	
