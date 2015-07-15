@@ -1,6 +1,8 @@
 var $display;
 var roundsPlayed= [];
 var time = 3000;
+var three_seconds = 3
+
 
 var initialize = function(){
 	$display = $('#display');
@@ -62,12 +64,10 @@ function shuffle(array) {
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
   }
-
   return array;
 }
 
 cancel = true;
-
 function startTimer(duration, display) {
 	var timer = duration, minutes, seconds;
 
@@ -75,15 +75,15 @@ function startTimer(duration, display) {
 		seconds = parseInt(timer % 60, 10);
 		seconds = seconds < 10 ? seconds : seconds;
 
-		display.text(seconds);
+		$display.text(seconds);
 		console.log(timer)
 
 		if (timer == -1) {
-			display.text("");
+			$display.text("");
 			clearInterval(interval)
 			easyGame();
 		} else if(--timer < -1) {
-			display.text("");
+			$display.text("");
 		}
 	},1000);
 }
@@ -112,25 +112,28 @@ var easyGame = function(){
 		if(this.getAttribute("data-id") === answer.operator){
 			$('#progress').html('Correct! Верно! Кichtig! 正確! Correctto!<br><button id="continue">CONTINUE</button>');
 			$("#continue").on("click", function(){
+
 				$('#progress').html("");
+				$display.html("");
 				roundsPlayed++;
 				time -= 100;
+				startTimer(three_seconds, display);
 			})  
 		} else {
  		$('#progress').html('WRONG! come one, you can do better than that! Неправильно! Falsch! 錯! Sbagliato!<br><button id="startAgain">START AGAIN</button>'); //alert("wrong answer")
 
  		$("#startAgain").on("click", function(){
- 			$('#progress').html("");
+
+ 			$display.html("");
  			time = 2500
+ 			startTimer(three_seconds, display);
  		})
  	}
- 	
  })
 
 	setTimeout(function() {
 		$('.operator').html('?')
 	}, time);
-
 }
 
 var bindEvents = function() {
@@ -141,10 +144,6 @@ var bindEvents = function() {
 		startTimer(three_seconds, display)
 	});
 
-	$('#progress').on('click', function(){
-		$('#display').html("")
-		startTimer(three_seconds, display)
-	});
 }
 
 $(function() {
