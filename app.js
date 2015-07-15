@@ -88,7 +88,6 @@ function startTimer(duration, display) {
 	},1000);
 }
 
-
 var easyGame = function(){
 	$('#easy').addClass('animated rubberBand');
 
@@ -106,7 +105,6 @@ var easyGame = function(){
 	while (answer.answer % 1 !== 0 || answer.answer < 50 || answer.answer > 999) {
 		answer = generateEquation();
 	}
-
 
 	$display.text(answer.firstRandomNumber + " " + "?" + " "+ answer.secondRandomNumber + " = " + answer.answer)
 
@@ -129,7 +127,6 @@ var easyGame = function(){
  	
  })
 
-
 	setTimeout(function() {
 		$('.operator').html('?')
 	}, time);
@@ -149,7 +146,6 @@ var bindEvents = function() {
 		startTimer(three_seconds, display)
 	});
 }
-
 
 $(function() {
 	initialize();

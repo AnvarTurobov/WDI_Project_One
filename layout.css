@@ -1,16 +1,16 @@
 * {
-  margin: 0;
-  padding: 0px;
-  cursor: url("./image.png"), default;
+	margin: 0;
+	padding: 0px;
+	cursor: url("./image.png"), default;
 }
 
 
 body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0 auto;
-  text-align: center;
-  background: url("./background.jpg") no-repeat center center / cover;
-  
+	font-family: 'Roboto', sans-serif;
+	margin: 0 auto;
+	text-align: center;
+	background: url("./background.jpg") no-repeat center center / cover;
+	
 }
 
 
@@ -58,18 +58,18 @@ body {
 
 
 #progress {
-  text-align: center;
-  margin: 48px auto;
-  background-color: transparent;
-  width: 450px;
-  height: 100px; 
-  border-width: 1px;
-  border-color: #6495ED;
-  border-radius: 100%;
-  padding: 20px;
-  color: red;
-  line-height: 30px;
-  outline: none
+	text-align: center;
+	margin: 48px auto;
+	background-color: transparent;
+	width: 450px;
+	height: 100px; 
+	border-width: 1px;
+	border-color: #6495ED;
+	border-radius: 100%;
+	padding: 20px;
+	color: red;
+	line-height: 30px;
+	outline: none
 }
 
 #continue {
@@ -92,38 +92,38 @@ body {
 }
 
 #display {
-  border-width: 2px;
-  border-color: red;
-  font-size: 85px;
-  font-family: Rockwell Extra Bold;
-  font-weight: bold;
-  text-align: middle;
-  margin: 20px auto;
-  width: 800px;
-  height: 100px; 
-  border-radius: 20%;
-  padding: 10px;
-  color: white;	
-    background-color: transparent;   
-    color: #fff;
-    text-shadow:
-      0 1px #808d93,
-      -1px 0 #cdd2d5,
-      -1px 2px #808d93,
-      -2px 1px #cdd2d5,
-      -2px 3px #808d93,
-      -3px 2px #cdd2d5,
-      -3px 4px #808d93,
-      -4px 3px #cdd2d5,
-      -4px 5px #808d93,
-      -5px 4px #cdd2d5,
-      -5px 6px #808d93,
-      -6px 5px #cdd2d5,
-      -6px 7px #808d93,
-      -7px 6px #cdd2d5,
-      -7px 8px #808d93,
-      -8px 7px #cdd2d5;
-  }
+	border-width: 2px;
+	border-color: red;
+	font-size: 85px;
+	font-family: Rockwell Extra Bold;
+	font-weight: bold;
+	text-align: middle;
+	margin: 20px auto;
+	width: 800px;
+	height: 100px; 
+	border-radius: 20%;
+	padding: 10px;
+	color: white;	
+	background-color: transparent;   
+	color: #fff;
+	text-shadow:
+	0 1px #808d93,
+	-1px 0 #cdd2d5,
+	-1px 2px #808d93,
+	-2px 1px #cdd2d5,
+	-2px 3px #808d93,
+	-3px 2px #cdd2d5,
+	-3px 4px #808d93,
+	-4px 3px #cdd2d5,
+	-4px 5px #808d93,
+	-5px 4px #cdd2d5,
+	-5px 6px #808d93,
+	-6px 5px #cdd2d5,
+	-6px 7px #808d93,
+	-7px 6px #cdd2d5,
+	-7px 8px #808d93,
+	-8px 7px #cdd2d5;
+}
 
 
 button {
@@ -135,26 +135,26 @@ button {
 	padding: 0;
 	border: 0px;
 	outline: none;
-	  background-color: transparent;   
-	  color: #f2f2f2;
-	  text-shadow:
-	    0 1px #808d93,
-	    -1px 0 #cdd2d5,
-	    -1px 2px #808d93,
-	    -2px 1px #cdd2d5,
-	    -2px 3px #808d93,
-	    -3px 2px #cdd2d5,
-	    -3px 4px #808d93,
-	    -4px 3px #cdd2d5,
-	    -4px 5px #808d93,
-	    -5px 4px #cdd2d5,
-	    -5px 6px #808d93,
-	    -6px 5px #cdd2d5,
-	    -6px 7px #808d93,
-	    -7px 6px #cdd2d5,
-	    -7px 8px #808d93,
-	    -8px 7px #cdd2d5;
-	}
+	background-color: transparent;   
+	color: #f2f2f2;
+	text-shadow:
+	0 1px #808d93,
+	-1px 0 #cdd2d5,
+	-1px 2px #808d93,
+	-2px 1px #cdd2d5,
+	-2px 3px #808d93,
+	-3px 2px #cdd2d5,
+	-3px 4px #808d93,
+	-4px 3px #cdd2d5,
+	-4px 5px #808d93,
+	-5px 4px #cdd2d5,
+	-5px 6px #808d93,
+	-6px 5px #cdd2d5,
+	-6px 7px #808d93,
+	-7px 6px #cdd2d5,
+	-7px 8px #808d93,
+	-8px 7px #cdd2d5;
+}
 
 li button {
 	font-size: 80px;
@@ -168,34 +168,34 @@ li button:hover{
 
 
 header {
-  width: 100%;
-  height: 60px;
-  text-align: center;
+	width: 100%;
+	height: 60px;
+	text-align: center;
 }
 
 ul {
-  margin: 0 auto;
+	margin: 0 auto;
 }
 
 
 li {
-  padding: 0;
-  margin: 0;
-  display: inline-block;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 h1 {
-  margin: 0 auto;
+	margin: 0 auto;
 }
 
 
 section {
-  width: 100%;
-  height: 500px;
+	width: 100%;
+	height: 500px;
 }
 
 section.wrapper {
@@ -206,9 +206,9 @@ section.wrapper {
 
 }
 
-	
+
 footer{
-  background-color: grey;
-  height: 200px;
-  margin: 100px auto;
+	background-color: grey;
+	height: 200px;
+	margin: 100px auto;
 }

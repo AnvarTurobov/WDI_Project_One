@@ -10,13 +10,13 @@ The aim of this game is to complete a mathematic equation by selecting the corre
 
 If the user selects the correct operator they progress to the next level. The time that the operators are shown starts at 2 seconds and decreases with each new level.
 
- ![](./Screenshot1.)
+ ![](./Screenshot1.png)
 
 The build:
 HTML 5, CSS3 and JavaScript were used to create this game.
 Animation was created using the Animate.css stylesheet.
 
- ![](./screenshot2.)
+ ![](./screenshot2.png)
 
 Problems & Challenges:
 The main challenge I faced building this game, was getting the timer working in the right order and resetting each time the new game started. Other challenges included making the game harder by eliminating easy equations such as 10+ 3 and non-divisible equations when it returns float numbers. 
